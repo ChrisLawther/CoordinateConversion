@@ -4,7 +4,8 @@ import CoreLocation
 /// system
 ///
 /// https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid
-public struct BNGLocation {
+
+public struct OSGridRef {
     public let easting: Double
     public let northing: Double
 
@@ -13,7 +14,7 @@ public struct BNGLocation {
         self.northing = northing
     }
 
-    /// Initialise a British National Grid location from a CLLocation
+    /// Initialises an OS Grid Reference from a CLLocation
     /// - Parameter location: The `CLLocation`
     public init(_ location: CLLocation) {
         let coordinate = location.coordinate

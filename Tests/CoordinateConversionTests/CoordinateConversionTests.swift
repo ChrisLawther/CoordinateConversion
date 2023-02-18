@@ -9,7 +9,7 @@ final class CoordinateConverstionTests: XCTestCase {
         let (e, n) = (400100.0, 371875.0)
         let cat_n_fiddle = CLLocation(easting: e, northing: n)
 
-        let bng = cat_n_fiddle.toBNG()
+        let bng = cat_n_fiddle.toOSGridRef()
 
         // Tiny errors after round-trip, hopefully
         XCTAssertEqual(e, bng.easting, accuracy: 0.01)

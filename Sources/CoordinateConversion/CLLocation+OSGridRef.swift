@@ -4,8 +4,8 @@ import CoreLocation
 // http://www.hannahfry.co.uk/blog/2014/12/26/more-on-converting-british-national-grid-to-latitude-and-longitude
 
 public extension CLLocation {
-    convenience init(_ bng: BNGLocation) {
-        self.init(easting: bng.easting, northing: bng.northing)
+    convenience init(_ osGridRef: OSGridRef) {
+        self.init(easting: osGridRef.easting, northing: osGridRef.northing)
     }
 
     convenience init(easting E: Double, northing N: Double) {
@@ -115,7 +115,9 @@ public extension CLLocation {
         self.init(latitude: lat, longitude: lon)
     }
 
-    func toBNG() -> BNGLocation {
-        BNGLocation(self)
+    /// Converts a CLLocation to its OS Grid Reference equivalent
+    /// - Returns: An OS Grid Reference
+    func toOSGridRef() -> OSGridRef {
+        OSGridRef(self)
     }
 }
