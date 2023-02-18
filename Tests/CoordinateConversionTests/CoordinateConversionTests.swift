@@ -1,6 +1,6 @@
 import XCTest
 import CoreLocation
-@testable import CoordinateConversion
+import CoordinateConversion
 
 final class CoordinateConverstionTests: XCTestCase {
     func testCatAndFiddle() throws {
@@ -12,8 +12,7 @@ final class CoordinateConverstionTests: XCTestCase {
         let bng = cat_n_fiddle.toBNG()
 
         // Tiny errors after round-trip, hopefully
-        XCTAssertEqual(e, bng.eastings, accuracy: 0.01)
-        XCTAssertEqual(n, bng.northings, accuracy: 0.01)
-
+        XCTAssertEqual(e, bng.easting, accuracy: 0.01)
+        XCTAssertEqual(n, bng.northing, accuracy: 0.01)
     }
 }
